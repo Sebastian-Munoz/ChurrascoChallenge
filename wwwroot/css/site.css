@@ -20,3 +20,18 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.gradient-login{
+  background: #3b3479;
+  background: linear-gradient(to right, rgba(60,53,121,255), rgba(34,29,68,255));
+}
+
+.btn-login{
+  background-color: #3c357a;
+  border-color: #3c357a;
+}
+
+.btn-login:hover{
+  background-color: #3c3579;
+  border-color: #3c3579;
+}
