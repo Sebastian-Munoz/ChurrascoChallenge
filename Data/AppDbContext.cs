@@ -11,34 +11,34 @@ namespace ChurrascoChallenge.Data
             
         }
         public DbSet<User> Users { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Product> products { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>(tb => {
-                tb.HasKey(col => col.IdUser);
-                tb.Property(col => col.IdUser).ValueGeneratedOnAdd();
+                tb.HasKey(col => col.id);
+                tb.Property(col => col.id).ValueGeneratedOnAdd();
 
-                tb.Property(col => col.Role).HasColumnType("VARCHAR").HasMaxLength(25);
+                tb.Property(col => col.role).HasColumnType("VARCHAR").HasMaxLength(25);
 
-                tb.Property(col => col.Active).HasDefaultValue(1);
+                tb.Property(col => col.active).HasDefaultValue(1);
 
             });
             modelBuilder.Entity<User>().ToTable("user");
 
             modelBuilder.Entity<Product>(tb => {
-                tb.HasKey(col => col.IdProduct);
-                tb.Property(col => col.IdProduct).ValueGeneratedOnAdd();
+                tb.HasKey(col => col.id);
+                tb.Property(col => col.id).ValueGeneratedOnAdd();
 
-                tb.HasIndex(col => col.Sku).IsUnique();
-                tb.HasIndex(col => col.Code).IsUnique();
+                tb.HasIndex(col => col.SKU).IsUnique();
+                tb.HasIndex(col => col.code).IsUnique();
 
-                tb.Property(col => col.Name).HasColumnType("VARCHAR").HasMaxLength(40);
+                tb.Property(col => col.name).HasColumnType("VARCHAR").HasMaxLength(40);
 
-                tb.Property(col => col.Price).HasPrecision(10, 2);
+                tb.Property(col => col.price).HasPrecision(10, 2);
 
-                tb.Property(col => col.Currency).HasColumnType("VARCHAR").HasMaxLength(3);
+                tb.Property(col => col.currency).HasColumnType("VARCHAR").HasMaxLength(3);
 
             });
         }

@@ -2,16 +2,16 @@ namespace ChurrascoChallenge.Models
 {
     public class User
     {
-        public int IdUser { get; set; }
-        public DateOnly Created { get; set; }
-        public string EMail { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Password { get; set; }
-        public DateOnly Updated { get; set; }
-        public string UserName { get; set; }
-        public string Role { get; set; }
-        public Byte Active { get; set; }
+        public int id { get; set; }
+        public DateOnly created { get; set; }
+        public string email { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public string password { get; set; }
+        public DateOnly updated { get; set; }
+        public string username { get; set; }
+        public string role { get; set; }
+        public Byte active { get; set; }
 
     }
 }
