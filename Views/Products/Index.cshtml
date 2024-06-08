@@ -1,0 +1,36 @@
+@model List<ChurrascoChallenge.Models.Product>;
+@{
+    ViewData["Title"] = "Products Page";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Products</h2>
+        <div class="p-2">
+            <a asp-controller="Products" asp-action="NewProduct" class="btn btn-primary">New product</a>
+        </div>
+        <table class="table table-bordered table-striped table-responsive">
+            <thead class="thead-dark">
+                <th>SKU</th>
+                <th>Name</th>
+                <th>Pictures</th>
+                <th>Price</th>
+                <th>Currency</th>
+            </thead>
+            <tbody>
+                @foreach(var product in Model)
+                {
+                    <tr>
+                        <td>@product.SKU</td>
+                        <td>@product.name</td>
+                        <td class="w-25">
+                            <img class="img-fluid img-thumbnail" src="@product.picture" alt="product">
+                        </td>
+                        <td>@product.price</td>
+                        <td>@product.currency</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
